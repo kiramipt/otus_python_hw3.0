@@ -344,7 +344,7 @@ class OnlineScoreRequest(BaseRequest):
         filled_field_names = [
             field_name
             for field_name in self.fields
-            if getattr(self, field_name, None)
+            if getattr(self, field_name, None) is not None
         ]
         context["has"] = ", ".join(filled_field_names)
 
